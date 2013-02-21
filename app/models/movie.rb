@@ -9,4 +9,5 @@ def self.all_ratings
   def similar_movies
     Movie.find_all_by_director(self.director)
   end
+#lol
 end
