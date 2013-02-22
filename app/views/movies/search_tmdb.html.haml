@@ -1,0 +1,21 @@
+%h1= @movie_name
+%table#movies
+  %thead
+    %tr
+      %th Movie Title
+      %th Rating
+      %th Director 
+      %th Release Date
+      %th More Info
+      %th Add Movie
+  %tbody
+    - @result_list.each do |movie|
+      %tr
+        %td= movie.title 
+        %td= movie.rating
+        %td= movie.director
+        %td= movie.release_date
+        %td= movie.description
+        %td= link_to "Click Here",  movies_path(:movie => {:title => movie.title, :rating => movie.rating, :director => movie.director, :release_date => movie.release_date, :description => movie.description})
+
+

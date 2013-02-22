@@ -133,6 +133,13 @@ class MoviesController < ApplicationController
     @similarMovies.uniq!
    end
 
-  
+  def search_tmdb
+    @movie_name = params[:search_terms]
+    @result_list = Movie.find_in_tmdb(@movie_name)
+    if @result_list.empty?
+      flash[:notice] = "'#{movie_name}' does not exist"
+      redirect_to movies_path
+    end
+  end  
 
 end

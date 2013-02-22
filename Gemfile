@@ -1,12 +1,13 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
-
+gem 'ruby-tmdb'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :test do
+  gem 'ZenTest'
   gem 'cucumber-rails'
   gem 'cucumber-rails-training-wheels'
   gem 'rspec-rails'
